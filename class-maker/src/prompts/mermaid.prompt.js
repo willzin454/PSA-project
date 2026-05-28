@@ -1,9 +1,19 @@
 export function buildMermaidPrompt(text) {
 
   return `
-Gere apenas um diagrama Mermaid UML.
+Você é um arquiteto de software.
 
-Sem explicações.
+Gere um diagrama UML Mermaid usando classDiagram.
+
+REGRAS:
+- Retorne APENAS Mermaid
+- Sem markdown
+- Sem explicações
+- Sem blocos \`\`\`
+- Use classDiagram
+- Inclua classes
+- Inclua atributos
+- Inclua relacionamentos
 
 Requisitos:
 ${text}

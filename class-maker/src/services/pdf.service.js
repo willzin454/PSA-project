@@ -1,12 +1,11 @@
-import fs from 'fs'
+import { readPdfText } from 'pdf-text-reader'
 
 export async function extractPdfText(filePath) {
 
-  const pdfParse = (await import('pdf-parse')).default
+  const text = await readPdfText({
+    url: filePath
+  })
 
-  const buffer = fs.readFileSync(filePath)
+  return text
 
-  const data = await pdfParse(buffer)
-
-  return data.text
 }
